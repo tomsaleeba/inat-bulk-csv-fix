@@ -34,6 +34,9 @@ const axios = Axios.create({
 const zeroFound = 'isZero'
 const tooManyFound = 'isTooMany'
 
+// hard coded alternate names for species. If the script finds new values, it
+// will print them out at the end of a run and you can put that back into the
+// code.
 const altSpecies = {
   'Acianthus caudatus': 'Mayfly orchid', // 320644
   'Caladenia carnea': 'Pink Lady Fingers', // 321090
@@ -55,6 +58,9 @@ const altSpecies = {
 }
 let isAltSpeciesDirty = false
 
+// we have to do the matching by hand for some records. It's easier than
+// writing the logic to match all the fields, or for some records, theres are
+// duplicates so we just randomly assign IDs.
 const forcedMatches = {
   // 117 and 120 are identical except for the individual count
   117: 60596430,
